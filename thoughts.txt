@@ -1,0 +1,27 @@
+in this project I try to make a version of the popular twitch stream "twitch plays pokemon"
+
+my game of choice is teamfight tactics, because I am playing it and there aren't many trys out there to reach this goal.
+
+the main different and challenging thing about tft and twitch plays pokemon is the time you have to do your actions.
+in twitch plays pokomen you got infinite, but you just have 30 secs in tft per turn. in this 30 secounds you have a bunch of stuff to do.
+you have a shop, where you have to buy the champs you need. you have a bench and a board, where you have to drag and drop your units.
+you have to watch at your gold for economy, you have to scout your enemys and ofcourse you have the twitch chat- many pleople spamming commands so the bot plays like they desire.
+
+it was and is a big challenge to me, because I don't just have to use knowledge I have already like shaping pictures, using for loops or the other basic python stuff.
+I have to learn new topics. computer vision, reverse engineering and I even watched into neural networks. the machine learning topic is interesing to me but isn't really possible,
+because tft changes to frequently. reinforcement learning for example wouldn't catch up fast enough, but it would save some time of the round, if I could automate some stuff.
+
+I tried to archieve a majority of these with python's ocr and pytesseract. A solution with too much usage of resources, it's slow and capped on things I can archieve.
+reading memory is I beliefe the better way to make this project happen, but it's close to undiscovered.
+
+TFT shares the same client from another game called league of legends. with league of legends on the other hand, I got some people to talk to.
+That way to learn reverse engineering tft is a lot faster, but still not possible without brainusage,
+
+I used ida pro, cheat engine, reclass, a program a guy made to dump league files and Lview.
+
+I had to rebuild cheat engine and reclass with some changes to the strings and icons of the programs because league wouldn't allow me to run these programs without this changes.
+I had to dump the league files, because the anti cheat detects ida pro, but I can use ida without a running league.
+
+now I can get stuff like shop and gold without computer vision, but it gets better: I found a way to get the boards of the enemys without going to their board. 
+not needing to scout is a big timesave.
+I just have to loop at different regions of the gamememory and get everything I needed.
