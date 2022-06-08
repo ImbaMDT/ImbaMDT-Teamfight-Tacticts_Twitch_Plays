@@ -9,7 +9,7 @@ def field_pointers(mem):
     FieldOffset = mem.read_int(mem.base_address + constants.oTFTObject)
     FieldEntityObject = mem.read_uint(FieldOffset + 0x04)
 
-    for x in range(256):  # wann fängt es an?
+    for x in range(256):  # max loops
         FieldIter = mem.read_uint(FieldEntityObject + (0x04 * x))
         try:
             FieldObjectBytes = mem.read_bytes(FieldIter + 0x58, 0x4)
