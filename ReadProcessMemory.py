@@ -57,6 +57,7 @@ def player_pointers(mem):
     return
 
 
-    
-mem = Pymem(constants.PROCESS_NAME)
-field_pointers(mem)
+
+if __name__ == "__main__":
+    mem = Pymem(constants.PROCESS_NAME)
+    field_pointers(mem)
