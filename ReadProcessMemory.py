@@ -3,6 +3,11 @@ from pymem import Pymem
 from pymem.exception import MemoryReadError
 
 
+# TODO: get player coords
+#       add the players into the constants.Field dict
+#       get gold, shops, items, stage, exp left to level, get stage state (for example: can you drag and drop units?)
+
+
 def field_pointers(mem):
     # Given constants.Process_Name
     # returns Object Name and Pos
