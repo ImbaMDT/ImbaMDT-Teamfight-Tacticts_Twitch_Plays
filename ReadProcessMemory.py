@@ -43,26 +43,36 @@ def field_pointers(mem):
 
 def player_pointers(mem):
     # Given constants.Process_Name
-    # returns Object Name and Pos
+    # returns Name and Pos of the players
     PlayerOffset = mem.read_int(mem.base_address + constants.oTFTChamps)
     PlayerOffset2 = mem.read_int(PlayerOffset + 0x04)
 
-    for x in range(8): # wann fängt es an?
+    for x in range(9): # wann fängt es an?
         FieldIter = mem.read_uint(PlayerOffset2 + (0x04*x))
         try:
-            playerName = mem.read_string(FieldIter + constants.oName)
-            playerX = mem.read_float(FieldIter + constants.oX) + mem.read_float(FieldIter + constants.oX2)
-            playerY = mem.read_float(FieldIter + constants.oY) + mem.read_float(FieldIter + constants.oY2)
-        except ownName:
-            ownName = mem.read_string(FieldIter + constants.oName)
-            ownX = mem.read_float(FieldIter + constants.oX) + mem.read_float(FieldIter + constants.oX2)
-            ownY = mem.read_float(FieldIter + constants.oY) + mem.read_float(FieldIter + constants.oY2)
+            FieldObjectBytes = mem.read_bytes(FieldIter + 0x58, 0x4)
+            if FieldObjectBytes == b'Obje':  # playerName is too large and a pointer now
+                playerNameOffset = mem.read_uint(FieldIter + constants.oName)
+                playerName = mem.read_string(playerNameOffset)
+                ChampX = round(mem.read_float(FieldIter + constants.oX) + mem.read_float(FieldIter + constants.oX2))
+                ChampY = round(mem.read_float(FieldIter + constants.oY) + mem.read_float(FieldIter + constants.oY2))
+                playerCoord = (ChampX, ChampY)
+                print(playerName)
+                print(playerCoord)
+            else:
+                playerName = mem.read_string(FieldIter + constants.oName)
+                playerX = round(mem.read_float(FieldIter + constants.oX) + mem.read_float(FieldIter + constants.oX2))
+                playerY = round(mem.read_float(FieldIter + constants.oY) + mem.read_float(FieldIter + constants.oY2))
+                playerCoord = (playerX, playerY)
+                print(playerName)
+                print(playerCoord)
+        except MemoryReadError:
+            break
 
-            print(ownName)
     return
 
 
 
 if __name__ == "__main__":
     mem = Pymem(constants.PROCESS_NAME)
-    field_pointers(mem)
+    player_pointers(mem)
