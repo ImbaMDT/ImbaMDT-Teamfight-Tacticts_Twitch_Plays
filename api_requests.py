@@ -1,6 +1,8 @@
 import json
 import requests
 
+# TODO: implement the auto_queue and api_requests codes into the program.
+
 
 def check_GameStart():
     try:
