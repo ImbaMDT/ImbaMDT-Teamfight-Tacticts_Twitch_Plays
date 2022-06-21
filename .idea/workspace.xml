@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99d09e92-76f3-44d8-8f9b-78f089edf479" name="Changes" comment="adding my thoughts to this project for better understanding why I do some things">
-      <change afterPath="$PROJECT_DIR$/auto_queue.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/json_writer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/set_updates_better.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadProcessMemory.py" beforeDir="false" afterPath="$PROJECT_DIR$/readProcessMemory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_requests.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_requests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champs/Nunu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thoughts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/thoughts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game_infos.json" beforeDir="false" afterPath="$PROJECT_DIR$/game_infos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/json_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/json_writer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readProcessMemory.py" beforeDir="false" afterPath="$PROJECT_DIR$/readProcessMemory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/set_updates_better.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,5 +1,5 @@
 import json
-import readProcessMemory
+from readProcessMemory import Read_MEM
 
 # writes and reads from an json file
 
@@ -15,7 +15,7 @@ def write_json(data):
 
 def player_names():                # changes playernames
     data = read_json()
-    player_id = readProcessMemory.player_pointers()
+    player_id = Read_MEM.player_pointers()
     x = 0
     y = 1
     for i in range(8):
@@ -28,7 +28,7 @@ def player_names():                # changes playernames
 
 def champions():
     data = read_json()
-    champ_id = readProcessMemory.champ_pointers()
+    champ_id = Read_MEM.champ_pointers()
     x = 0
     y = 1
     z = 2

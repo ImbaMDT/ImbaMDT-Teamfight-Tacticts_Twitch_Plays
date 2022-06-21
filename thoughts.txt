@@ -30,9 +30,9 @@ not needing to scout is a big timesave.
 I just have to loop at different regions of the gamememory and get everything I needed.
 
 Problem 2 link the given data with data I can work with:
-datastruktur?
-3 verschiedene wege player coords auf der map zu finden. minimap geht nicht,weil picture vom little legend gleich sein kann.
+datastructur?
+3 different ways to find player coords on the map. minimap brings me nothing, because players can have the same apperience
 
 Problem x build the prgram:
-program arbeitet parallel
-benutz classes?
+multiprocessing
+how and when to use classes?
