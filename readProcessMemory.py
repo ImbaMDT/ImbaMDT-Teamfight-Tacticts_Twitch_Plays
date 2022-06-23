@@ -49,6 +49,7 @@ class Read_MEM:
                     player_id = str(player_x + player_y)
                     player_offsets.extend((player_id, player_name))
 
+                print(player_offsets)
             except MemoryReadError:
                 break
 
@@ -69,9 +70,10 @@ class Read_MEM:
 
                     champ_name_offset = self.mem.read_uint(field_iter + constants.oName)
                     champ_name = self.mem.read_string(champ_name_offset + 0xE)  # + 0xE to delete the UID from the Units
-                    champ_x = round(self.mem.read_float(field_iter + constants.oX) + mem.read_float(field_iter + constants.oX2))
-                    champ_y = round(self.mem.read_float(field_iter + constants.oY) + mem.read_float(field_iter + constants.oY2))
+                    champ_x = round(self.mem.read_float(field_iter + constants.oX) + self.mem.read_float(field_iter + constants.oX2))
+                    champ_y = round(self.mem.read_float(field_iter + constants.oY) + self.mem.read_float(field_iter + constants.oY2))
                     champ_coord = (champ_x, champ_y)
+                    print(champ_name)
 
                     if champ_coord in constants.field:
                         champ_name = champ_name.split('_')  # Delete the RoundCounter of an Unit / or .partition
@@ -92,4 +94,4 @@ class Read_MEM:
 if __name__ == "__main__":
 
     p = Read_MEM()
-    p.player_pointers()
+    p.champ_pointers()

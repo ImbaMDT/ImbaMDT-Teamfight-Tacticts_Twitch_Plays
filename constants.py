@@ -2,7 +2,7 @@
 
 PROCESS_NAME = 'League of Legends.exe'
 
-oTFTObject = 0x2491BC8
+oTFTObject = 0x24B7C28
 oName = 0x54
 oCheck = 0x58
 oX = 0xD8
@@ -10,9 +10,9 @@ oY = 0xE0
 oX2 = 0xE4
 oY2 = 0xEC
 
-oTFTAction = 0x2491B40
+oTFTAction = 0x1868CF8
 
-oTFTChamps = 0x1842D4C
+oTFTChamps = 0x1868D88
 TFTC = 0x4
 
 field = {
