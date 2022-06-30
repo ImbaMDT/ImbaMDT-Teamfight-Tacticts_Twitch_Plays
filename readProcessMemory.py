@@ -13,15 +13,16 @@ import constants
 class Read_MEM:
 
     """ reads the game memory """
-    in_game = False
-    while not in_game:
-        try:
-            # get mem
-            mem = Pymem(constants.PROCESS_NAME)
-            mem.read_int(mem.base_address)
-            in_game = True
-        except:
-            pass
+    def __init__(self):
+        in_game = False
+        while not in_game:
+            try:
+                # get mem
+                mem = Pymem(constants.PROCESS_NAME)
+                mem.read_int(mem.base_address)
+                in_game = True
+            except:
+                pass
     # other code that uses result but is not involved in getting it
 #    mem = Pymem(constants.PROCESS_NAME)
 
@@ -30,7 +31,7 @@ class Read_MEM:
         # given constants.Process_Name
         # returns Name and Pos of the players
         player_offsets = []
-        player_offset = self.mem.read_int(self.mem.base_address + constants.oTFTChamps)
+        player_offset = self.mem.read_int(self.mem.base_address + constants.oTFTPlayers)
         player_offset2 = self.mem.read_int(player_offset + 0x04)
 
         for x in range(8):  # max loops
@@ -40,13 +41,13 @@ class Read_MEM:
                 if field_object_bytes == b'Obje':  # player_name is too large and a pointer now
                     player_name_offset = self.mem.read_uint(field_iter + constants.oName)
                     player_name = self.mem.read_string(player_name_offset)
-                    player_id = str(player_x + player_y)
+                    player_id = player_x + player_y     # str(player_x + player_y) for using the json
                     player_offsets.extend((player_id, player_name))
                 else:
                     player_name = self.mem.read_string(field_iter + constants.oName)
                     player_x = round(self.mem.read_float(field_iter + constants.oX) + self.mem.read_float(field_iter + constants.oX2))
                     player_y = round(self.mem.read_float(field_iter + constants.oY) + self.mem.read_float(field_iter + constants.oY2))
-                    player_id = str(player_x + player_y)
+                    player_id = player_x + player_y     # str(player_x + player_y) for using the json
                     player_offsets.extend((player_id, player_name))
 
                 print(player_offsets)
